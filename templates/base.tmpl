@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
-  {% include head.html %}
+  {% include "head.tmpl" %}
 
-  <body>
+  <body class="sidebar-overlay layout-reverse">
 
-    {% include sidebar.html %}
+    {% include "sidebar.html" %}
 
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
          content to avoid any CSS collisions with our real content. -->
@@ -13,14 +13,14 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="/" title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
+            <a href="/" title="Home">{{ blog_title }}</a>
+            <small>{{ blog_description }}</small>
           </h3>
         </div>
       </div>
 
       <div class="container content">
-        {{ content }}
+        {% block content %}{% endblock %}
       </div>
     </div>
 
