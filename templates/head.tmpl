@@ -51,6 +51,11 @@
 
   {{ html_head() }}
 
+  {% block extra_head %}
+  {#  Leave this block alone. #}
+  {% endblock %}
+  {{ template_hooks['extra_head']() }}
+
   <title>
     {% if title == "Home" %}
       {{ blog_title }} &middot; {{ blog_description }}

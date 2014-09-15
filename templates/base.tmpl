@@ -47,5 +47,7 @@
     </script>
 
     {{ index_helper.late_load_js() }}
+    {{ body_end }}
+    {{ template_hooks['body_end']() }}
   </body>
 </html>
