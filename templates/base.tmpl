@@ -1,3 +1,5 @@
+{% import 'index_helper.tmpl' as index_helper with context %}
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
@@ -43,5 +45,7 @@
         }, false);
       })(document);
     </script>
+
+    {{ index_helper.late_load_js() }}
   </body>
 </html>
