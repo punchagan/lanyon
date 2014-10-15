@@ -7,8 +7,10 @@
 {% endmacro %}
 
 {% macro html_post_header() %}
-    <header>
-        {{ html_title() }}
-        <span class="post-date">{{ post.formatted_date(date_format) }}</span>
-    </header>
+    {% if not post.meta('hideheader') %}
+        <header>
+            {{ html_title() }}
+            <span class="post-date">{{ post.formatted_date(date_format) }}</span>
+        </header>
+    {% endif %}
 {% endmacro %}
