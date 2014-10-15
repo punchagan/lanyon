@@ -551,3 +551,23 @@ a.pagination-item:hover {
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
 }
+
+
+/* Footnote related tweaks */
+.footnotes {
+    display: none;
+    margin-top: 5em;
+}
+
+#footnotes {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-top: #eee double 1px;
+    padding-top: 2em;
+    font-size: 75%;
+}
+
+.footdef sup {
+    float: left;
+    margin-right: 0.2em;
+}
