@@ -52,8 +52,9 @@
   {{ html_head() }}
 
   {% block extra_head %}
-  {#  Leave this block alone. #}
+      {# Leave this block alone #}
   {% endblock %}
+  {{ extra_head_data }}
   {{ template_hooks['extra_head']() }}
 
   <title>
