@@ -36,7 +36,17 @@
     </nav>
     </aside>
     {% if not post.meta('nocomments') and site_has_comments %}
-        <section class="comments">
+        <div style="margin: auto; text-decoration: none; text-align: center;">
+            <a rel="show-comments" onclick="toggleComments(this)" title="Show comments">Show comments</a>
+        </div>
+        <script>
+         function toggleComments(target) {
+             target.remove();
+             var comments = document.querySelector('.comments');
+             comments.style.display = 'block';
+         };
+        </script>
+        <section class="comments" style="display: none;">
         <h2>{{ messages("Comments") }}</h2>
         {{ comments.comment_form(post.permalink(absolute=True), post.title(), post._base_path) }}
         </section>
