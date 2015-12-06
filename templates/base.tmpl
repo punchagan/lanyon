@@ -44,6 +44,23 @@ lang="{{ lang }}">
 
     <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 
+    <script>
+      (function(document) {
+          var toggle = document.querySelector('.sidebar-toggle');
+          var sidebar = document.querySelector('#sidebar');
+          var checkbox = document.querySelector('#sidebar-checkbox');
+
+          // Uncheck checkbox by default on non-wide screens.
+          if (window.innerWidth < 1300) {
+              checkbox.checked = false;
+          }
+
+          // FIXME: The checkbox should have a cookie!
+          // http://www.quirksmode.org/js/cookies.html
+
+      })(document);
+    </script>
+
     {{ index_helper.late_load_js() }}
     {{ body_end }}
     {{ template_hooks['body_end']() }}
