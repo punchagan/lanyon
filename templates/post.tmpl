@@ -1,7 +1,6 @@
 {#  -*- coding: utf-8 -*- #}
 {% import 'post_helper.tmpl' as helper with context %}
 {% import 'post_header.tmpl' as pheader with context %}
-{% import 'comments_helper.tmpl' as comments with context %}
 {% extends 'base.tmpl' %}
 
 {% block extra_head %}
@@ -36,22 +35,13 @@
     </nav>
     </aside>
     {% if not post.meta('nocomments') and site_has_comments %}
-        <div style="margin: auto; text-decoration: none; text-align: center;">
-            <a rel="show-comments" onclick="toggleComments(this)" title="Show comments">Show comments</a>
-        </div>
-        <script>
-         function toggleComments(target) {
-             target.remove();
-             var comments = document.querySelector('.comments');
-             comments.style.display = 'block';
-         };
-        </script>
-        <section class="comments" style="display: none;">
-        <h2>{{ messages("Comments") }}</h2>
-        {{ comments.comment_form(post.permalink(absolute=True), post.title(), post._base_path) }}
+        <section class="comments">
+            <p style="text-align: center; zoom: 60%; margin: 10px; background: #F5F5DC; padding: 10px; border-radius: 5px;">
+                If you would like to comment on something I've said here, <a href="mailto:punchagan@muse-amuse.in?subject=Comment on {{title|e}}">send
+                me an email</a> or get in touch with me on <a href="https://twitter.com/punchagan">twitter</a>.
+            </p>
         </section>
     {% endif %}
     {{ helper.mathjax_script(post) }}
 </article>
-{{ comments.comment_link_script() }}
 {% endblock %}
