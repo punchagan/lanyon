@@ -299,7 +299,7 @@ a.sidebar-nav-item:focus {
 
 .page,
 .post {
-  margin-bottom: 4em;
+  margin-bottom: 0em !important;
 }
 
 /* Blog post or page title */
