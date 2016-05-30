@@ -1,0 +1,28 @@
+div.prompt {
+    display: none;
+}
+
+div [class^=text_cell], div [class^=cell] {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.rendered_html h1,
+.rendered_html h2,
+.rendered_html h3,
+.rendered_html h4,
+.rendered_html h5,
+.rendered_html h6
+{
+    font-weight:normal;
+}
+
+.highlight {
+    margin-bottom: 0;
+}
+
+
+div.output_wrapper {
+    margin: 1em 0;
+}
