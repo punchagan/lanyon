@@ -3,12 +3,12 @@
     {% if prevlink or nextlink %}
         <div class="pagination">
         {% if nextlink %}
-            <span class="pagination-item newer">
+            <span class="pagination-item older">
                 <a href="{{ nextlink }}" rel="next">{{ messages("Older posts") }}</a>
             </span>
         {% endif %}
         {% if prevlink %}
-            <span class="pagination-item older">
+            <span class="pagination-item newer">
                 <a href="{{ prevlink }}" rel="prev">{{ messages("Newer posts") }}</a>
             </span>
         {% endif %}
