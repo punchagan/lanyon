@@ -595,6 +595,13 @@ a.pagination-item:hover {
     float: right;
 }
 
+.project .language {
+    float: right;
+    font-size: 50%;
+    margin-top: 0.75em;
+    margin-right: 0.5em;
+}
+
 .project .description {
     font-size: 80%
 }
