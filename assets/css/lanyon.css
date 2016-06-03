@@ -638,3 +638,7 @@ a.pagination-item:hover {
 .project-status-legend {
     border-bottom: 0;
 }
+
+.project-status-legend .label {
+    float: left;
+}
