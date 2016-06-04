@@ -4,29 +4,16 @@
 
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
-  <div class="sidebar-item">
-    <p>{{ blog_title }} &mdash; {{ blog_description }} </p>
-  </div>
 
   <nav class="sidebar-nav">
     <!-- The code below dynamically generates a sidebar nav of pages with -->
     <!-- `layout: page` in the front-matter. See readme for usage. -->
 
     {% set pages_list = navigation_links() %}
-    {% for link, name in pages_list %}
-      <a class="sidebar-nav-item{% if permalink == link %} active{% endif %}" href="{{ link }}">{{ name }}</a>
+    {% for link, fa_name, title in pages_list %}
+      <a class="sidebar-nav-item{% if permalink == link %} active{% endif %}" href="{{ link }}" title="{{ title }}"><i class="fa fa-{{fa_name}} on fa-lg"></i></a>
     {% endfor %}
 
   </nav>
-
-  <div class="sidebar-item">
-    <p>
-      {{ search_form }}
-    </p>
-  </div>
-
-  <div class="sidebar-item">
-      {{ content_footer }}
-  </div>
 
 </div>
