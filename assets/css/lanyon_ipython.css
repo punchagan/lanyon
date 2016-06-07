@@ -18,7 +18,7 @@ div [class^=text_cell], div [class^=cell] {
     font-weight:normal;
 }
 
-.highlight {
+.hl-ipython3 {
     margin-bottom: 0;
 }
 
