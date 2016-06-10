@@ -11,7 +11,10 @@
 
     {% set pages_list = navigation_links() %}
     {% for link, fa_name, title in pages_list %}
-      <a class="sidebar-nav-item{% if permalink == link %} active{% endif %}" href="{{ link }}" title="{{ title }}"><i class="fa fa-{{fa_name}} on fa-lg"></i></a>
+      <a class="sidebar-nav-item{% if permalink == link %} active{% endif %}" href="{{ link }}" title="{{ title }}">
+          <i class="fa fa-{{fa_name}} on fa-lg"></i>
+      </a>
+      <span class="sidebar-nav-item-title" href="{{ link }}">{{ title }}</span>
     {% endfor %}
 
   </nav>

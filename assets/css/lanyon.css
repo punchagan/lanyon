@@ -184,6 +184,18 @@ a.sidebar-nav-item:focus {
   border-color: transparent;
 }
 
+a.sidebar-nav-item:hover + span,
+a.sidebar-nav-item:focus + span {
+    display: block;
+}
+
+.sidebar-nav-item-title {
+    display: none;
+    text-align: center;
+    font-size: 75%;
+    max-width: 3rem
+}
+
 /* Hide the sidebar checkbox that we toggle with `.sidebar-toggle` */
 .sidebar-checkbox {
   display: none;
