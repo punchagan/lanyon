@@ -8,7 +8,7 @@
         </header>
         {% if posts %}
             {% for grouper, posts_ in posts|groupby('date.year')|reverse %}
-                <h2>{{grouper}}</h2>
+                <h2>{{grouper}} <small>({{posts_|count}})</small></h2>
                 <table class="post-list">
                     {% for post in posts_ %}
                         <tr class="post-list-item">
