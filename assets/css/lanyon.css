@@ -637,3 +637,8 @@ a.pagination-item:hover {
 .project-status-legend .label {
     float: left;
 }
+
+/* Post list related CSS */
+.post-list-date {
+    width: 9rem;
+}

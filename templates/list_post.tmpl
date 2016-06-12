@@ -12,7 +12,7 @@
                 <table class="post-list">
                     {% for post in posts_ %}
                         <tr class="post-list-item">
-                            <td>
+                            <td class="post-list-date">
                                 <time class="listdate" datetime="{{ post.formatted_date('webiso') }}"
                                       title="{{ post.formatted_date(date_format)|e }}">
                                     {{ post.formatted_date(date_format)|e }}
