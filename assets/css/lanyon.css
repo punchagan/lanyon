@@ -175,6 +175,8 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   padding: .5rem 1rem;
   border-top: 1px solid rgba(255,255,255,.1);
+  margin-top: -2rem;
+  position: relative;
 }
 .sidebar-nav-item.active,
 a.sidebar-nav-item:hover,
@@ -184,16 +186,25 @@ a.sidebar-nav-item:focus {
   border-color: transparent;
 }
 
-a.sidebar-nav-item:hover + span,
-a.sidebar-nav-item:focus + span {
-    display: block;
+.sidebar-nav-div:hover > span,
+.sidebar-nav-div:focus > span {
+    opacity: 1;
 }
 
-.sidebar-nav-item-title {
-    display: none;
+.sidebar-nav-div:hover > a,
+.sidebar-nav-div:focus > a {
+    opacity: 0.1;
+}
+
+.sidebar-nav-div > span {
+    display: block;
+    opacity: 0.1;
+    padding: 0.5rem 0;
     text-align: center;
     font-size: 75%;
-    max-width: 3rem
+    max-width: 3rem;
+    max-height: 2rem;
+    position: relative;
 }
 
 /* Hide the sidebar checkbox that we toggle with `.sidebar-toggle` */
