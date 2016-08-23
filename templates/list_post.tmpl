@@ -7,21 +7,24 @@
             <h1>{{ title|e }}</h1>
         </header>
         {% if posts %}
-            {% for grouper, posts_ in posts|groupby('date.year')|reverse %}
-                <h2>{{grouper}} <small>({{posts_|count}})</small></h2>
-                <table class="post-list">
-                    {% for post in posts_ %}
-                        <tr class="post-list-item">
-                            <td class="post-list-date">
-                                <time class="listdate" datetime="{{ post.formatted_date('webiso') }}"
-                                      title="{{ post.formatted_date(date_format)|e }}">
-                                    {{ post.formatted_date(date_format)|e }}
-                                </time>
-                            </td>
-                            <td><a href="{{post.permalink()}}" class="listtitle">{{post.title()|e}}</a></td>
-                        </tr>
-                    {% endfor %}
-                </table>
+            {% for year, posts_ in posts|groupby('date.year')|reverse %}
+                <h2>{{year}} <small>({{posts_|count}})</small></h2>
+                {% for month, posts__ in posts_|groupby('date.month')|reverse %}
+                    <h4>{{posts__[0].formatted_date("%b")}} <small>({{posts__|count}})</small></h4>
+                    <table class="post-list">
+                        {% for post in posts__ %}
+                            <tr class="post-list-item">
+                                <td class="post-list-date">
+                                    <time class="listdate" datetime="{{ post.formatted_date('webiso') }}"
+                                          title="{{ post.formatted_date(date_format)|e }}">
+                                        {{ post.formatted_date(date_format)|e }}
+                                    </time>
+                                </td>
+                                <td><a href="{{post.permalink()}}" class="listtitle">{{post.title()|e}}</a></td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% endfor %}
             {% endfor %}
         {% else %}
             <p>{{ messages("No posts found.") }}</p>
